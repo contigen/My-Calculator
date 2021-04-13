@@ -1,2 +1,3 @@
-# Calculator-App
-A Calculator created with Javascript
+# JS Calculator
+A nice JavaScript calculator with good functionalities.<br>
+Feel free to use!
