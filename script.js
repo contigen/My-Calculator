@@ -13,6 +13,7 @@ class Calculator {
   constructor(topValue, bottomValue) {
     this.topValue = topValue;
     this.bottomValue = bottomValue;
+    // call clear() on initialization
     this.clear();
   }
   clear() {
@@ -24,6 +25,7 @@ class Calculator {
     this.currentValue = this.currentValue.toString().slice(0, -1);
   }
   selectNumber(num) {
+    // check if decimal point already exists
     if (num === `.` && this.currentValue.includes(`.`)) return;
     this.currentValue = this.currentValue.toString() + num.toString();
   }
@@ -68,6 +70,7 @@ class Calculator {
     if (isNaN(intValue)) {
       digits = ``;
     } else {
+       // delimit digits by commas
       digits = intValue.toLocaleString(`en`, { maximumFractionDigits: 0 });
     }
     if (decValue != null) {
@@ -76,6 +79,7 @@ class Calculator {
       return `${digits}`;
     }
   }
+  // output values
   updateValue() {
     if (this.operator != null) {
       this.topValue.textContent = `${this.delimitNumber(this.previousValue)} ${
